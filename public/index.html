@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/screen.css"/>
+    <link rel="stylesheet" href="stylesheets/print.css"/>
+    <link rel="stylesheet" href="stylesheets/ie.css"/>
+    <script src="//vjs.zencdn.net/4.3/video.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/BigVideo.js/lib/bigvideo.js"></script>
+    <link rel="stylesheet" href="bower_components/BigVideo.js/css/bigvideo.css">
+    <script>
+        var image_width = 1024;
+        var image_margin_left = 390;
+        var image_iframe_width = 245;
+
+        var image_height = 557;
+        var image_margin_top = 53;
+        var image_iframe_height= 435;
+
+        function resize() {
+            console.log('resize');
+            var width = $(window).width();
+            var height = $(window).height();
+
+            var img = $("#hand");
+            img.height(height);
+
+            var leftImg = (width-img.width())/2;
+            var topImg = (height-img.height())/2;
+
+            img.offset({ top: topImg, left: leftImg });
+
+            var scale = height/image_height;
+
+            var iframeWidth = scale*image_iframe_width;
+            var iframeHeight = scale*image_iframe_height;
+
+            var left = scale*image_margin_left + leftImg;
+            var top = scale*image_margin_top + topImg;
+
+            var iframe = $(".hand-container > iframe");
+
+            iframe.width(iframeWidth);
+            iframe.height(iframeHeight);
+
+            iframe.offset({ top: top, left: left });
+        }
+
+        function setUrl() {
+            var hash = window.location.hash;
+            var url = hash.substring(hash.indexOf('#')+1, hash.length)
+            $('#iframe').attr('src', url);
+        }
+
+        $(function() {
+            var BV = new $.BigVideo();
+            BV.init();
+            BV.show([
+                /*{ type: "video/mp4",  src: "vids/river.mp4" },
+                { type: "video/webm", src: "vids/river.webm" },*/
+                { type: "video/ogg",  src: "vids/vid.ogv" }
+            ], {doLoop:true});
+
+            $( window ).resize(function() {
+                resize();
+            });
+
+            resize();
+            setUrl();
+        });
+
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="get-it">
+            <a href="https://play.google.com/store/apps/details?id=com.example">
+                <img alt="Get it on Google Play"
+                     src="img/Download_on_the_App_Store_Badge_US-UK_135x40.svg" />
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.example">
+                <img alt="Get it on Google Play"
+                     src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
+            </a>
+        </div>
+        <div class="hand-container">
+            <img src="./img/hand.png" id="hand"/>
+            <iframe id="iframe" frameborder="0"></iframe>
+        </div>
+    </div>
+</body>
+</html>

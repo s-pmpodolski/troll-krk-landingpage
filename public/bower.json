@@ -1,0 +1,19 @@
+{
+  "name": "troll-krk-landing",
+  "version": "0.0.0",
+  "authors": [
+    "Piotr Podolski <piotr.podolski@schibsted.pl>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "BigVideo.js": "~1.1.5"
+  }
+}
