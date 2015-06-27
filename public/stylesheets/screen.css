@@ -112,3 +112,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .hand-container iframe {
   position: absolute;
 }
+
+/* line 51, ../sass/screen.scss */
+.mobile #iframe {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/* line 59, ../sass/screen.scss */
+.mobile #hand {
+  display: none;
+}
