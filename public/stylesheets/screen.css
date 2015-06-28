@@ -67,52 +67,110 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 11, ../sass/screen.scss */
-.main {
-  border-top: solid 1.33333vh #c9ac4f;
+/* line 12, ../sass/screen.scss */
+body.mobile iframe {
   width: 100%;
   height: 100%;
 }
-/* line 16, ../sass/screen.scss */
-.main .left {
-  width: 57%;
-  float: left;
+/* line 17, ../sass/screen.scss */
+body.mobile #hand {
+  display: none;
 }
 /* line 21, ../sass/screen.scss */
-.main .right {
-  width: 43%;
-  float: left;
+body.mobile .right {
+  display: none;
 }
-/* line 25, ../sass/screen.scss */
-.main .right > .container {
-  padding-top: 23.33333vh;
-}
-/* line 29, ../sass/screen.scss */
-.main .right h1 {
-  padding-bottom: 3.66667vh;
-}
-/* line 33, ../sass/screen.scss */
-.main .right h1.underlined {
-  padding-bottom: 4.66667vh;
-}
-/* line 34, ../sass/screen.scss */
-.main .right h1.underlined span {
-  padding-bottom: 4.66667vh;
-  border-bottom: solid 1vh #c9ac4f;
-}
-/* line 42, ../sass/screen.scss */
-.main .right p {
-  padding-top: 6vh;
-  color: #808080;
-}
-/* line 47, ../sass/screen.scss */
-.main .right .buttons {
-  margin-top: 9.33333vh;
-}
-/* line 50, ../sass/screen.scss */
-.main .right .buttons button {
-  height: 6.66667vh;
-  background-color: #c9ac4f;
-  color: white;
-  border: none;
+
+@media (min-device-width: 768px) {
+  /* line 28, ../sass/screen.scss */
+  .main {
+    border-top: solid 1.33333vh #c9ac4f;
+    width: 100%;
+    height: 100%;
+  }
+  /* line 33, ../sass/screen.scss */
+  .main .left {
+    width: 57%;
+    float: left;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 15.33333vh;
+  }
+  /* line 43, ../sass/screen.scss */
+  .main .left #hand {
+    right: 0;
+    position: relative;
+    height: 100%;
+    width: auto;
+    z-index: 0;
+    float: right;
+  }
+  /* line 52, ../sass/screen.scss */
+  .main .left iframe {
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+  }
+  /* line 61, ../sass/screen.scss */
+  .main .right {
+    padding-left: 57%;
+    right: 0;
+  }
+  /* line 66, ../sass/screen.scss */
+  .main .right .cont-fluid {
+    width: 100%;
+  }
+  /* line 70, ../sass/screen.scss */
+  .main .right > .container {
+    padding-top: 23.33333vh;
+  }
+  /* line 74, ../sass/screen.scss */
+  .main .right h1 {
+    padding-bottom: 3.33333vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10.66667vh;
+    line-height: 5.33333vh;
+    font-weight: bold;
+  }
+  /* line 82, ../sass/screen.scss */
+  .main .right h1.underlined {
+    padding-bottom: 3.33333vh;
+  }
+  /* line 83, ../sass/screen.scss */
+  .main .right h1.underlined span {
+    padding-bottom: 4.66667vh;
+    border-bottom: solid 1vh #c9ac4f;
+  }
+  /* line 91, ../sass/screen.scss */
+  .main .right p {
+    padding-top: 6vh;
+    color: #808080;
+    font-family: 'Old Standard TT', serif;
+    font-size: 3.33333vh;
+  }
+  /* line 98, ../sass/screen.scss */
+  .main .right .buttons {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 9.33333vh;
+  }
+  /* line 102, ../sass/screen.scss */
+  .main .right .buttons button {
+    height: 6.66667vh;
+    background-color: #c9ac4f;
+    font-size: 1.46667vh;
+    color: white;
+    border: none;
+    padding-left: 2.66667vh;
+    padding-right: 2.66667vh;
+  }
+  /* line 112, ../sass/screen.scss */
+  .main .right .buttons button:first-child {
+    margin-right: 1.33333vh;
+    margin-bottom: 1.33333vh;
+  }
 }

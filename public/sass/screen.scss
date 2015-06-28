@@ -8,50 +8,111 @@ $gold_color: #c9ac4f;
 
 $default_height: 1500;
 
-.main {
-  border-top: solid (20/$default_height)*100vh $gold_color;
-  width: 100%;
-  height: 100%;
+body.mobile {
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
 
-  .left {
-    width: 57%;
-    float: left;
+  #hand {
+    display: none;
   }
 
   .right {
-    width: 43%;
-    float: left;
+    display: none;
+  }
+}
 
-    &>.container {
-      padding-top: (350/$default_height)*100vh;
-    }
+@media (min-device-width: 768px) {
 
-    h1 {
-      padding-bottom: (55/$default_height)*100vh;
-    }
+  .main {
+    border-top: solid (20/$default_height)*100vh $gold_color;
+    width: 100%;
+    height: 100%;
 
-    h1.underlined {
-      span {
-        padding-bottom: (70/$default_height)*100vh;
-        border-bottom: solid (15/$default_height)*100vh $gold_color;
+    .left {
+      width: 57%;
+      float: left;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: (230/$default_height)*100vh;
+
+      #hand {
+        right: 0;
+        position: relative;
+        height: 100%;
+        width: auto;
+        z-index: 0;
+        float: right;
       }
 
-      padding-bottom: (70/$default_height)*100vh;
+      iframe {
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 10;
+        background-color: white;
+      }
     }
 
-    p {
-      padding-top: (90/$default_height)*100vh;
-      color: #808080;
-    }
+    .right {
+      padding-left: 57%;
 
-    .buttons {
-      margin-top: (140/$default_height)*100vh;
+      right: 0;
 
-      button {
-        height: (100/$default_height)*100vh;
-        background-color: $gold_color;
-        color: white;
-        border: none;
+      .cont-fluid {
+        width: 100%;
+      }
+
+      & > .container {
+        padding-top: (350/$default_height)*100vh;
+      }
+
+      h1 {
+        padding-bottom: (50/$default_height)*100vh;
+        font-family: 'Montserrat', sans-serif;
+        font-size: (160/$default_height)*100vh;
+        line-height: (80/$default_height)*100vh;
+        font-weight: bold;
+      }
+
+      h1.underlined {
+        span {
+          padding-bottom: (70/$default_height)*100vh;
+          border-bottom: solid (15/$default_height)*100vh $gold_color;
+        }
+
+        padding-bottom: (50/$default_height)*100vh;
+      }
+
+      p {
+        padding-top: (90/$default_height)*100vh;
+        color: #808080;
+        font-family: 'Old Standard TT', serif;
+        font-size: (50/$default_height)*100vh;
+      }
+
+      .buttons {
+        font-family: 'Montserrat', sans-serif;
+        margin-top: (140/$default_height)*100vh;
+
+        button {
+          height: (100/$default_height)*100vh;
+          background-color: $gold_color;
+          font-size: (22/$default_height)*100vh;
+          color: white;
+          border: none;
+          padding-left: (40/$default_height)*100vh;
+          padding-right: (40/$default_height)*100vh;
+        }
+
+        button:first-child {
+          margin-right: (20/$default_height)*100vh;
+          margin-bottom: (20/$default_height)*100vh;
+        }
       }
     }
   }

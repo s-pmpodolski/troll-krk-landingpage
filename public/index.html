@@ -8,38 +8,43 @@
     <link rel="stylesheet" href="stylesheets/ie.css"/>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Old+Standard+TT' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <script>
-        var image_width = 1024;
-        var image_margin_left = 390;
-        var image_iframe_width = 245;
+        var image_width = 1280;
+        var image_margin_left = 738;
+        var image_margin_right = 88;
+        var image_iframe_width = 454;
 
-        var image_height = 557;
-        var image_margin_top = 53;
-        var image_iframe_height= 435;
+        var image_height = 1047;
+        var image_margin_top = 93;
+        var image_iframe_height = 815;
 
         var isMobile = false;
 
         function resize() {
-            var width = $(window).width();
-            var height = $(window).height();
+            var width = $(".left").width();
+            var height = $(".left").height();
 
             var img = $("#hand");
             img.height(height);
 
-            var leftImg = (width-img.width())/2;
-            var topImg = (height-img.height())/2;
-
-            img.offset({ top: topImg, left: leftImg });
-
             var scale = height/image_height;
+
+            console.log(img.offset());
 
             var iframeWidth = scale*image_iframe_width;
             var iframeHeight = scale*image_iframe_height;
 
-            var left = scale*image_margin_left + leftImg;
-            var top = scale*image_margin_top + topImg;
+            console.log(scale);
 
-            var iframe = $(".hand-container > iframe");
+            var left = scale*image_margin_left + img.offset().left;
+            console.log(left, scale, image_margin_left, img.offset().left)
+            var top = scale*image_margin_top + img.offset().top;
+
+            console.log(left, top);
+
+            var iframe = $("iframe");
 
             iframe.width(iframeWidth);
             iframe.height(iframeHeight);
@@ -62,7 +67,7 @@
         function setUrl() {
             var hash = window.location.hash;
             var url = hash.substring(hash.indexOf('#')+1, hash.length)
-            $('#iframe').attr('src', url);
+            $('iframe').attr('src', url);
         }
 
         function detectMobile() {
@@ -71,6 +76,14 @@
                 return true;
             }
             return false;
+        }
+
+        function firstResize() {
+            if(!detectMobile()) {
+                resize();
+            } else {
+                resizeMobile();
+            }
         }
 
         $(function() {
@@ -93,13 +106,14 @@
 
     </script>
 </head>
-<body>
+<body onload="firstResize()">
     <div class="main">
         <div class="left">
-            <iframe frameborder="0"></iframe>
+            <img src="./img/hand.png" id="hand"/>
+            <iframe id="iframe" frameborder="0"></iframe>
         </div>
         <div class="right">
-            <div class="container">
+            <div class="container cont-fluid">
                 <div class="row">
                     <div class="col-md-12">
                         <h1>HIDDEN</h1>
@@ -117,7 +131,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <p>
-                            Każde miasto ma historie,
+                            Każde miasto ma historie,<br />
                             która nie została opowiedziana.
                         </p>
                     </div>
@@ -135,5 +149,10 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $(function() {
+            resize();
+        })
+    </script>
 </body>
 </html>
