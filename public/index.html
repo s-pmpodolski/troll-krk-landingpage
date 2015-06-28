@@ -88,6 +88,8 @@
 
         function setButtons() {
             $("button").click(function(){
+                console.log($(this));
+                console.log($(this).data('href'));
                 window.location.href = $(this).data('href');
             });
         }
@@ -146,10 +148,10 @@
                 </div>
                 <div class="row buttons">
                     <div class="col-md-12">
-                        <button data-href="https://play.google.com/store/apps/details?id=com.beaconvalley.hackaton">
+                        <button data-href="http://bit.ly/1SUjUqF">
                             DOWNLOAD FOR ANDROID
                         </button>
-                        <button data-href="http://tinyletter.com/hiddencityapp">
+                        <button data-href="http://bit.ly/1BYpbtf">
                             DOWNLOAD FOR IOS
                         </button>
                     </div>
