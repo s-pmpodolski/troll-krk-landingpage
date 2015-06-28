@@ -134,31 +134,40 @@ body.mobile .right {
     padding-bottom: 3.33333vh;
     font-family: 'Montserrat', sans-serif;
     font-size: 10.66667vh;
-    line-height: 5.33333vh;
+    line-height: 3.33333vh;
     font-weight: bold;
   }
   /* line 82, ../sass/screen.scss */
+  .main .right h1.first {
+    display: inline-block;
+  }
+  /* line 86, ../sass/screen.scss */
+  .main .right h1.first span::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 25.33333vh;
+    width: 25%;
+    left: 25%;
+    border-bottom: solid 1vh #c9ac4f;
+  }
+  /* line 97, ../sass/screen.scss */
   .main .right h1.underlined {
     padding-bottom: 3.33333vh;
   }
-  /* line 83, ../sass/screen.scss */
-  .main .right h1.underlined span {
-    padding-bottom: 4.66667vh;
-    border-bottom: solid 1vh #c9ac4f;
-  }
-  /* line 91, ../sass/screen.scss */
+  /* line 101, ../sass/screen.scss */
   .main .right p {
-    padding-top: 6vh;
+    padding-top: 7.33333vh;
     color: #808080;
     font-family: 'Old Standard TT', serif;
     font-size: 3.33333vh;
   }
-  /* line 98, ../sass/screen.scss */
+  /* line 108, ../sass/screen.scss */
   .main .right .buttons {
     font-family: 'Montserrat', sans-serif;
     margin-top: 9.33333vh;
   }
-  /* line 102, ../sass/screen.scss */
+  /* line 112, ../sass/screen.scss */
   .main .right .buttons button {
     height: 6.66667vh;
     background-color: #c9ac4f;
@@ -168,7 +177,7 @@ body.mobile .right {
     padding-left: 2.66667vh;
     padding-right: 2.66667vh;
   }
-  /* line 112, ../sass/screen.scss */
+  /* line 122, ../sass/screen.scss */
   .main .right .buttons button:first-child {
     margin-right: 1.33333vh;
     margin-bottom: 1.33333vh;

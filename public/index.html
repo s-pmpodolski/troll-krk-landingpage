@@ -86,6 +86,12 @@
             }
         }
 
+        function setButtons() {
+            $("button").click(function(){
+                window.location.href = $(this).data('href');
+            });
+        }
+
         $(function() {
             if(!detectMobile()) {
                 $( window ).resize(function() {
@@ -102,6 +108,8 @@
             }
 
             setUrl();
+
+            setButtons();
         });
 
     </script>
@@ -116,7 +124,7 @@
             <div class="container cont-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>HIDDEN</h1>
+                        <h1 class="first"><span>HIDDEN</span></h1>
                     </div>
                 </div>
                 <div class="row">
@@ -138,10 +146,10 @@
                 </div>
                 <div class="row buttons">
                     <div class="col-md-12">
-                        <button>
+                        <button data-href="https://play.google.com/store/apps/details?id=com.beaconvalley.hackaton">
                             DOWNLOAD FOR ANDROID
                         </button>
-                        <button>
+                        <button data-href="http://tinyletter.com/hiddencityapp">
                             DOWNLOAD FOR IOS
                         </button>
                     </div>
