@@ -67,61 +67,52 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 7, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 .main {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-transition-duration: 0.6s;
-  -moz-transition-duration: 0.6s;
-  -ms-transition-duration: 0.6s;
-  -o-transition-duration: 0.6s;
-  transition-duration: 0.6s;
-}
-
-/* line 20, ../sass/screen.scss */
-.get-it {
-  width: 100%;
-}
-
-/* line 24, ../sass/screen.scss */
-.hand-container {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-}
-/* line 31, ../sass/screen.scss */
-.hand-container #hand {
-  height: 100%;
-  max-height: 100%;
-  width: auto;
-  top: 0;
-  left: 0;
-  /*
-  background: url(../img/hand.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/
-}
-/* line 45, ../sass/screen.scss */
-.hand-container iframe {
-  position: absolute;
-}
-
-/* line 51, ../sass/screen.scss */
-.mobile #iframe {
-  top: 0;
-  left: 0;
-  position: absolute;
+  border-top: solid 1.33333vh #c9ac4f;
   width: 100%;
   height: 100%;
 }
-/* line 59, ../sass/screen.scss */
-.mobile #hand {
-  display: none;
+/* line 16, ../sass/screen.scss */
+.main .left {
+  width: 57%;
+  float: left;
+}
+/* line 21, ../sass/screen.scss */
+.main .right {
+  width: 43%;
+  float: left;
+}
+/* line 25, ../sass/screen.scss */
+.main .right > .container {
+  padding-top: 23.33333vh;
+}
+/* line 29, ../sass/screen.scss */
+.main .right h1 {
+  padding-bottom: 3.66667vh;
+}
+/* line 33, ../sass/screen.scss */
+.main .right h1.underlined {
+  padding-bottom: 4.66667vh;
+}
+/* line 34, ../sass/screen.scss */
+.main .right h1.underlined span {
+  padding-bottom: 4.66667vh;
+  border-bottom: solid 1vh #c9ac4f;
+}
+/* line 42, ../sass/screen.scss */
+.main .right p {
+  padding-top: 6vh;
+  color: #808080;
+}
+/* line 47, ../sass/screen.scss */
+.main .right .buttons {
+  margin-top: 9.33333vh;
+}
+/* line 50, ../sass/screen.scss */
+.main .right .buttons button {
+  height: 6.66667vh;
+  background-color: #c9ac4f;
+  color: white;
+  border: none;
 }

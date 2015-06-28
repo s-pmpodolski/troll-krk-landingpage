@@ -6,10 +6,8 @@
     <link rel="stylesheet" href="stylesheets/screen.css"/>
     <link rel="stylesheet" href="stylesheets/print.css"/>
     <link rel="stylesheet" href="stylesheets/ie.css"/>
-    <script src="//vjs.zencdn.net/4.3/video.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/BigVideo.js/lib/bigvideo.js"></script>
-    <link rel="stylesheet" href="bower_components/BigVideo.js/css/bigvideo.css">
     <script>
         var image_width = 1024;
         var image_margin_left = 390;
@@ -53,7 +51,7 @@
             var width = $(window).width();
             var height = $(window).height();
 
-            var iframe = $(".hand-container > iframe");
+            var iframe = $("iframe");
 
             iframe.width(width);
             iframe.height(height);
@@ -77,13 +75,6 @@
 
         $(function() {
             if(!detectMobile()) {
-                var BV = new $.BigVideo();
-                BV.init();
-                BV.show([
-                    /*{ type: "video/mp4",  src: "vids/river.mp4" },
-                    { type: "video/webm", src: "vids/river.webm" },*/
-                    { type: "video/ogg",  src: "vids/vid.ogv" }
-                ], {doLoop:true});
                 $( window ).resize(function() {
                     resize();
                 });
@@ -104,19 +95,44 @@
 </head>
 <body>
     <div class="main">
-        <div class="get-it">
-            <a href="https://play.google.com/store/apps/details?id=com.example">
-                <img alt="Get it on Google Play"
-                     src="img/Download_on_the_App_Store_Badge_US-UK_135x40.svg" />
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.example">
-                <img alt="Get it on Google Play"
-                     src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
-            </a>
+        <div class="left">
+            <iframe frameborder="0"></iframe>
         </div>
-        <div class="hand-container">
-            <img src="./img/hand.png" id="hand"/>
-            <iframe id="iframe" frameborder="0"></iframe>
+        <div class="right">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>HIDDEN</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="underlined">
+                            <span>
+                                CITY
+                            </span>
+                        </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            Każde miasto ma historie,
+                            która nie została opowiedziana.
+                        </p>
+                    </div>
+                </div>
+                <div class="row buttons">
+                    <div class="col-md-12">
+                        <button>
+                            DOWNLOAD FOR ANDROID
+                        </button>
+                        <button>
+                            DOWNLOAD FOR IOS
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
